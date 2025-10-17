@@ -1,10 +1,10 @@
-import App from "../components/chessboard";
+import ChessGameComponent from "@/components/ChessGameComponent";
 
 export default function Home() {
   return (
     <main>
       <div className="cont">
-        <App />
+        <ChessGameComponent />
       </div>
     </main>
   );
