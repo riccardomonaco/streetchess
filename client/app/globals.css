@@ -1,7 +1,12 @@
+@layer theme, base, components, utilities;
+
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #322233;
   --foreground: #171717;
 }
 
@@ -14,8 +19,13 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #182c31;
     --foreground: #ededed;
+    --brownish: #b58863;
+    --brownish_darker: #997353;
+    --yellowish: #f0d9b5;
+    --greyblack: #101f22;
+    --other: #d3b83b;
   }
 }
 
@@ -23,4 +33,45 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  background-size: contain;
+}
+
+.chessboard-container {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  /**/
+}
+
+.glass {
+  /* From https://css.glass */
+  background: var(--greyblack);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(15.8px);
+  -webkit-backdrop-filter: blur(15.8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  fill: #599d95;
+}
+
+.buttons-container {
+  display: grid;
+  border-right: 15px solid var(--background);
+}
+
+.chessboard-btn {
+  background-color: var(--brownish);
+  color: white;
+  fill: var(--yellowish);
+  text-shadow: 2px 2px 1px var(--background);
+}
+
+.chessboard-btn:hover {
+  background-color: var(--brownish_darker);
+}
+
+.navtext{
+  color: var(--brownish);
+  text-shadow: 2px 2px 1px var(--background);
 }
