@@ -1,6 +1,7 @@
 "use client";
 
 import ChessboardComponent from "@/components/ChessboardComponent";
+import MoveList from "@/components/MoveList";
 import { useChessGame } from "@/hooks/useChessGame";
 
 export default function Home() {
@@ -12,7 +13,7 @@ export default function Home() {
         {/* Left panel */}
         <div className="w-1/4">
           <h2 className="text-xl font-semibold mb-4">Moves</h2>
-          {/*<MoveList moves={history} />*/}
+          <MoveList moves={history} />
           <div className="mt-4 flex gap-2">
             <button
               onClick={undo}
